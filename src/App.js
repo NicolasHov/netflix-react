@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react' 
-import MovieCard from './MovieCard'
+import MovieCard from './components/MovieCard'
 import movies from './movies'
 
 class App extends React.Component {
@@ -11,9 +11,12 @@ class App extends React.Component {
       copyMovie: [] }
   }
 
+
   render() {
+    const listMoviesStyle = { display: 'flex', flexWrap: 'wrap',
+    justifyContent: 'space-between' }
     return (
-      <div className="list-movies">
+      <div style={listMoviesStyle}>
         {this.state.movies.map(movie => {
           return(
             <MovieCard movie={movie} />
